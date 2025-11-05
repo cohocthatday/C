@@ -2,35 +2,17 @@
 
 int main()
 {
-
-    int dai, rong;
-
-    printf("Nhap chieu dai (>= 3): ");
-    scanf("%d", &dai);
-
-    printf("Nhap chieu rong (>= 3): ");
-    scanf("%d", &rong);
-
-    if (dai < 3 || rong < 3)
+   int year;
+    printf("Nhap vao nam: ");
+    scanf("%d", &year);
+    if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
     {
-        printf("Loi: Chieu dai va chieu rong phai lon hon 3!\n");
+        printf("%d la nam nhuan\n", year);
     }
     else
     {
-        printf("\nHinh chu nhat rong ruot %d x %d:\n", rong, dai);
-
-        for (int i = 1; i <= rong; i++)
-        {
-            for (int j = 1; j <= dai; j++)
-            {
-                if (i == 1 || i == rong || j == 1 || j == dai)
-                    printf("* ");
-                else
-                    printf("  ");
-            }
-            printf("\n");
-        }
+       printf("%d khong phai la nam nhuan\n", year);
     }
-
+    
     return 0;
 }
